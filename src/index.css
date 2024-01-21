@@ -207,12 +207,8 @@ input[type="button"]{
   box-shadow: 0px 0px 6px #ddd;
 }
 
-.lateral input[type="text"],
-.lateral input[type="text"],
-.lateral textarea,
-.edit_form input[type="text"],
-.edit_form input[type="text"],
-.edit_form textarea
+.formulario input[type="text"],
+textarea
 {
   display: block;
   margin: 0 auto;
@@ -225,6 +221,29 @@ input[type="button"]{
   opacity: 4;
   outline: 0;
   border-color: transparent;
+}
+
+.form-group{
+  width: 50%;
+  margin:  auto;
+}
+
+.form-group label{
+  display: block;
+  text-align: left;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="file"]
+{
+  border: 1px solid #ddd;
+  outline: 0;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .edit_form{
