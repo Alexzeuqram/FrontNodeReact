@@ -12,20 +12,24 @@ export const Crear = () => {
   const guardarArticulo = async (e) => {
     e.preventDefault();
 
-
     let nuevoArticulo = formulario;
 
     const { datos } = await Peticion(Global.url + "crear", "POST", nuevoArticulo);
 
     if (datos.code === 201) {
+
       setResultado("guardado");
+
     } else {
+
       setResultado("error")
+
     }
 
     const fileInput = document.querySelector("#file");
 
     if (datos.code === 201 && fileInput.files[0]) {
+
       setResultado("guardado");
 
       const formData = new FormData();
@@ -35,15 +39,16 @@ export const Crear = () => {
       const subida = await Peticion(Global.url + "subir-imagen/" + datos.data, "POST", formData, true);
 
       if (subida.code === 201) {
-        
+
         setResultado("guardado");
-      } 
+      }
 
     }
-    console.log(datos);
+
   }
 
   return (
+
     <div className='jumbo'>
 
       <h1>Crear articulo</h1>

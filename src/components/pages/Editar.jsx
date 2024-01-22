@@ -13,7 +13,9 @@ export const Editar = () => {
   const params = useParams();
 
   useEffect(() => {
+
     conseguirArticulo();
+
   }, []);
 
   const conseguirArticulo = async () => {
@@ -22,13 +24,13 @@ export const Editar = () => {
     if ((datos.message === "Success")) {
 
       setArticulo(datos.data[0]);
+
     }
-
-    console.log(articulo);
-
+   
   };
 
   const editarArticulo = async (e) => {
+
     e.preventDefault();
 
     let nuevoArticulo = formulario;
@@ -36,9 +38,12 @@ export const Editar = () => {
     const { datos } = await Peticion(Global.url + "articulo/" + params.id, "PUT", nuevoArticulo);
 
     if (datos.code === 200) {
+
       setResultado("guardado");
     } else {
-      setResultado("error")
+
+      setResultado("error");
+
     }
 
     const fileInput = document.querySelector("#file");
@@ -53,10 +58,10 @@ export const Editar = () => {
 
       const subida = await Peticion(Global.url + "subir-imagen/" + params.id, "POST", formData, true);
 
-
       if (subida.code === 200) {
 
         setResultado("guardado");
+        
       }
 
     }

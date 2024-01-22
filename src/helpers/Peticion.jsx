@@ -4,9 +4,13 @@ export const Peticion = async (url, metodo, datosGuardar = "", archivos = false)
   let opciones = {
     method: "GET",
   };
+
   if (metodo === "GET" || metodo === "DELETE") {
+
     opciones = {
+
       method: metodo,
+      
     };
   }
 
@@ -18,6 +22,7 @@ export const Peticion = async (url, metodo, datosGuardar = "", archivos = false)
     if (archivos) {
 
       opciones = {
+
         method: metodo,
         body: datosGuardar
 
@@ -26,6 +31,7 @@ export const Peticion = async (url, metodo, datosGuardar = "", archivos = false)
     } else {
 
       opciones = {
+
         method: metodo,
         body: new URLSearchParams(datosGuardar),
         headers: {
@@ -34,8 +40,6 @@ export const Peticion = async (url, metodo, datosGuardar = "", archivos = false)
       };
 
     }
-
-
 
   }
 

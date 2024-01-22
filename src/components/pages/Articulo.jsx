@@ -6,6 +6,7 @@ import { Peticion } from "../../helpers/Peticion";
 import { Listado } from "./Listado";
 
 export const Articulo = () => {
+
   const [articulo, setArticulo] = useState([]);
   const [cargando, setCargando] = useState(true);
   const params = useParams();
@@ -14,10 +15,8 @@ export const Articulo = () => {
     conseguirArticulo();
   }, []);
 
-
-
-
   const conseguirArticulo = async () => {
+
     const { datos, cargando } = await Peticion(Global.url + "articulo/" + params.id, "GET");
 
     if ((datos.message === "Success")) {
@@ -26,8 +25,6 @@ export const Articulo = () => {
     }
 
     setCargando(false);
-    console.log(articulo);
-
 
   };
 
@@ -46,9 +43,9 @@ export const Articulo = () => {
             <span>{articulo.fecha}</span>
             <p>{articulo.contenido}</p>
           </>
-
         }
       </>
+      
     </div>
 
   );

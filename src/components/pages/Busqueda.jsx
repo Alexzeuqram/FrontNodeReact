@@ -11,21 +11,24 @@ export const Busqueda = () => {
   const params = useParams();
 
   useEffect(() => {
+
     conseguirArticulos();
+
   }, [params]);
 
-  
   const conseguirArticulos = async () => {
 
-    const { datos, cargando } = await Peticion(Global.url + "buscar/" + params.busqueda , "GET");
+    const { datos, cargando } = await Peticion(Global.url + "buscar/" + params.busqueda, "GET");
 
     console.log(params.busqueda)
     console.log(datos.data)
 
     if ((datos.status === "success")) {
+
       setArticulos(datos.articulos);
-    }else{
-        setArticulos([]);
+    } else {
+      setArticulos([]);
+
     }
 
     setCargando(false);
