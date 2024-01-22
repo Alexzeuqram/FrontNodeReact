@@ -36,9 +36,7 @@ export const Crear = () => {
 
       if (subida.code === 201) {
         setResultado("guardado");
-      } else {
-        setResultado("error");
-      }
+      } 
 
     }
     console.log(datos);
