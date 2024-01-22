@@ -12,6 +12,9 @@ export const Articulos = () => {
     conseguirArticulos();
   }, []);
 
+
+  
+
   const conseguirArticulos = async () => {
     const { datos, cargando } = await Peticion(Global.url + "articulos", "GET");
 
@@ -20,12 +23,15 @@ export const Articulos = () => {
     }
 
     setCargando(false);
+
+    
   };
 
   return (
     <>
       {cargando ? "cargando.." :
         articulos.length >= 1 ?
+        
           <Listado articulos={articulos} setArticulos={setArticulos} />
           : <h1>No hay articulos</h1>
 

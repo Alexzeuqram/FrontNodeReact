@@ -35,6 +35,7 @@ export const Crear = () => {
       const subida = await Peticion(Global.url + "subir-imagen/" + datos.data, "POST", formData, true);
 
       if (subida.code === 201) {
+        
         setResultado("guardado");
       } 
 
